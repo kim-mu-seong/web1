@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>week0423</title>
+    <head>
+        <style>
+        #web1 { background-color: black; color: aliceblue;}
+        #web2 { width: 800px; background-color: gray; word-spacing: 2em; text-indent: 2em;}
+        #web3 { background-color: rgb(42, 42, 42); color: aliceblue;}
+        #web4 { background-color: gray;}
+        #web5 { background-color: gray;}
+        #web6 { background-color: gray; color: aliceblue;}
+        table {text-align: left; width: 1000px; height: 100px; table-layout: fixed; border-collapse: collapse;}
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr id="web1">
+                <th colspan="8">
+                    <h1>header</h1>
+                    <p>header의 두번째 제목입니다.</p>
+                </th>
+            </tr>
+            <tr id="web2">
+                <td>&nbsp;</td>, <td>메뉴 1</td>, <td>메뉴 2</td>, <td>메뉴 3</td>, <td>메뉴 4</td>, <td>메뉴 5</td>, <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <th colspan="5">&nbsp;</th>
+                <th id="web3" colspan="3" rowspan="4">
+                <h2>aside</h2> <p>aside의 본문입니다.</p>
+                </th>
+            </tr>
+            <tr>
+                <th id="web4" colspan="5">
+                <h2>article 1</h2>
+                <p>article 1의 본문입니다.</p>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="5">
+                    <hr>
+                </th>
+            </tr>
+            <tr >
+                <th id="web5" colspan="5">
+                <h2>article 2</h2>
+                <p>article 2의 본문입니다.</p>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="5">&nbsp;</th>
+                <th colspan="3">&nbsp;</th>
+            </tr>
+            <tr>
+                <td id="web6" colspan="8">footer</td>
+            </tr>
+
+    </table>
+    </body>
+</html>
