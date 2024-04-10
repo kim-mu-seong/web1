@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0624</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>설문조사</h3>
+        <form method="past" action="form_app.js">
+            <fieldset>
+                <legend>성별과 나이를 입력하세요.</legend>
+                성별 : 
+                <input type="radio" name="m" id="m" value="m"> <label for="m">남자</label>
+                <input type="radio" name="f" id="f" value="f"> <label for="f">여자</label> <br>
+                나이 : <input type="text" name="age" pattern="[0-9]+"> <br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>관심 분야를 선택하세요.(1개 이상)</legend>
+                <input type="checkbox" name="hobby" id="d" value="d"> <label for="d">디지털 콘텐츠</label>
+                <input type="checkbox" name="hobby" id="w" value="w"> <label for="w">웹프로그래밍</label>
+                <input type="checkbox" name="hobby" id="date" value="date"> <label for="date">데이터베이스</label>
+                <input type="checkbox" name="hobby" id="e" value="e"> <label for="e">전자출판</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>다음 문항에 대해 5점 척도로 답하세요.</legend>
+                본 세미나의 주제는 만족스러운가? 1<input type="range" name="1to5" min="1" max="5" value="3">5 <br>
+                본 세미나의 초청 강사는 만족스러운가? 1<input type="range" name="1to5" min="1" max="5" value="3">5 <br>
+                본 세미나의 강의 시간은 적당한가? 1<input type="range" name="1to5" min="1" max="5" value="3">5
+            </fieldset>
+            <br>
+            기타 건의 사항 <br>
+            <textarea name="comment" rows="6" cols="60">의견을 적으세요</textarea> <br>
+            <input type="submit" value="확인">
+            <input type="reset" value="취소">
+    </body>
+ </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0625</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>레스토랑 예약하기</h3>
+        <form method="past" action="form_app.js">
+            <fieldset>
+                <legend>예약자 정보</legend>
+                예약자 : <input type="text" name="예약"> <br>
+                연락처 : <input type="tel" placeholder="00*-000*-0000" pattern="[0-9]-[0-9]-[0-9]"> <br>
+                예약인원 : <select name="예약" size="1">
+                    <option>2명</option> <option>3명</option> <option>4명</option> <option>5명 이상</option>
+                </select>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>일자 선택 및 시간 선택</legend>
+                <input type="date" name="일자">
+                <input type="time" name="시간">
+
+            </fieldset>
+            <br>
+            <input type="submit" value="예약">
+            <input type="reset" value="취소">
+    </body>
+ </html>

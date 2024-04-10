@@ -1,0 +1,75 @@
+
+예제 4
+<html>
+<body>
+    <h3>도서 검색</h3>
+    <form method="post" action="form_app.js">
+        <fieldset>
+            <legend>로그인</legend>
+            <label for="user.id">아이디 : </label>
+            <input type="text" name="id" size="20" id="user_id"> <br>
+            <label for="user_pw">비밀번호 :</label>
+            <input type="password" name="pw" size="20" id="user_pw">
+        </fieldset> <br>
+
+        <fieldset>
+            <legend>통합 검색</legend>
+            <label for="book_name">도서명 :</label>
+            <input type="text" name="book_search" size="50" id="book_name">
+            <br>검색범위 :
+            <input type="radio" name="s_type" value="keyword" id="keyword">
+            <label for="keyword">키워드</label>
+            <input type="radio" name="s_type" value="content" id="content">
+            <label for="content">본문내용</label>
+            <br>자료유형 :
+            <input type="checkbox" name="d_type" value="all">전체
+            <input type="checkbox" name="d_type" value="book">단행본
+            <input type="checkbox" name="d_type" value="paper">학술지
+            <input type="checkbox" name="d_type" value="non_book">비도서<br>
+        </fieldset> <br>
+
+        <button type="submit">검색</button>
+        <button type="reset">지우기</button>
+    </form>
+</body>
+</html>
+
+예제 5
+<html>
+<body>
+    <h3> 도서 예약 대출</h3>
+    <form method="get" action="form_app.js">
+        성명 : <input type="text" name="p_name" /> <br>
+        전화 : <input type="tel" name="p_tel" placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" /><br>
+        이메일 : <input type="email" name="p_mail" placeholder="***@***.***" />
+        <p>
+            도서명 : <input type="text" size="25" name="book_title" /><br>
+            예약 희망일 : <input type="date" name="last_date" min="2013-01-30"> <br>
+            수령 시간 : <input type="time" name="time_form" min="09:00" max="18:00">
+            에서 <input type="time" name="time_until" min="09:00" max="18:00"> 사이 <br>
+            <hr>
+            <input type="submit" value="예약하기" />
+        </p>
+    </form>
+</body>
+</html>
+
+예제 6
+<html>
+<body>
+    <form>
+        <h3>도서 구입 요청</h3>
+        도서명 : <input type="text" list="book" />
+        <datalist id="book">
+            <option value="멀티미디어배움터" label="30,000"></option>
+            <option value="인터넷배움터" label="34,000"></option>
+            <option value="컴퓨터와 IT 기술의 이해" label="28,000"></option>
+        </datalist>
+
+        <p>선호도 : 1 <input type="range" min="1" max="5" value="3" /> 5 </p>
+        <p>가격 : <input type="number" name="price" min="0" step="100" value="10000" /> 원 </p>
+        <p>권혁수 : <input type="number" name="num" min="0" step="1" value="0" /> 권 </p>
+        <p><input type="submit" value="구입" /> </p>
+    </form>
+</body>
+</html>
