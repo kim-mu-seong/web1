@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0822</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+var num1 = prompt("첫 번째 숫자를 입력:");
+var operator = prompt("연산 기호를 입력 (+, -, *, /):");
+var num2 = prompt("두 번째 숫자를 입력:");
+
+var result;
+switch (operator) {
+    case "+":
+        result = num1 + num2;
+        break;
+    case "-":
+        result = num1 - num2;
+        break;
+    case "*":
+        result = num1 * num2;
+        break;
+    case "/":
+        if (num2 !== 0) {
+            result = num1 / num2;
+        } else {
+            result = "계산 할 수 없음";
+        }
+        break;
+    default:
+        result = "계산 할 수 없음";
+}
+
+document.write("결과:", result);
+
+        </script>
+    </body>
+ </html>
