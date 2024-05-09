@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            var arr = new Array("zero", "one", 3, "25" );
+
+            document.write("Original Array: <br/>");
+            print_array(arr, "arr");
+
+            arr.sort();
+            document.write("<br/> After sort: <br/>");
+            print_array(arr, "arr");
+
+            var new_arr = arr.concat(4, "five", 6);
+            document.write("<br/> After concatenation: <br/>");
+            print_array(new_arr, "new_arr");
+
+            var sliced_arr = arr.slice(2, 6);
+            document.write("<br/> After slice: <br/>");
+            print_array(sliced_arr, "sliced_arr");
+            </script>
+    </body>
+ </html>
