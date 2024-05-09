@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0923</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+ 
+        var count = prompt("입력할 숫자의 개수를 입력하세요:");
+        var numbers = [];
+
+        for (var i = 0; i < count; i++) {
+            var num = prompt("숫자를 입력하세요:");
+            numbers.push(num);
+        }
+
+        var max = Math.max(...numbers); 
+        var min = Math.min(...numbers); 
+
+        document.write("입력한 숫자 중 최대값은 " + max + "이고, 최소값은 " + min + "이다.");
+</script>
+    </body>
+ </html>

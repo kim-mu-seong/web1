@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0924</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+        var WC = prompt("정렬할 단어의 개수를 입력하세요:");
+
+        var words = [];
+
+        for (var i = 0; i < WC; i++) {
+            var word = prompt("단어를 입력하세요:");
+            words.push(word);
+        }
+
+        document.write("오름차순 정렬 결과: ");
+        words.sort();
+        document.write(words.join(", "));
+
+        document.write("내림차순 정렬 결과: ");
+        words.sort().reverse();
+        document.write(words.join(", "));
+    </script>
+</body>
+</html>

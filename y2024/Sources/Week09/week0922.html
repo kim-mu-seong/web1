@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0922</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+        var a = new Date().getTime();
+        var today = new Date(a);
+
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+
+        document.write("오늘 날짜와 시간 : " + year + "년 " + month + "월 " + day + "일 " + hours + "시 " + minutes + "분 " + seconds + "초");
+    </script>
+</body>
+</html>

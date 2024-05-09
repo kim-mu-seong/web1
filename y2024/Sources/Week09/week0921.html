@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week0921</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            var today = new Date();
+            var y = today.getFullYear();
+            var m = today.getMonth() + 1;
+            var d = today.getDate();
+            var a = today.getDay(); 
+
+            var days = ['일', '월', '화', '수', '목', '금', '토']; 
+
+            var day = days[a]; 
+
+            document.write("오늘 날짜:" + y + "년 " + m + "월 " + d + "일 " + day + "요일");
+        </script>
+    </body>
+</html>
