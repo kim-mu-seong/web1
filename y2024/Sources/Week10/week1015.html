@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1015</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="btn">
+            <input type="button" value="button 1" onclick="removeButton(this)"/>
+            <input type="button" value="button 2" onclick="removeButton(this)"/>
+            <input type="button" value="button 3" onclick="removeButton(this)"/>
+        </div>
+    <script type="text/javascript">
+            function removeButton(btn) {
+            document.getElementById("btn").removeChild(btn);
+        }
+        </script>
+    </body>
+ </html>

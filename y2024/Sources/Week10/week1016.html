@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1016</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="btn">
+            <input type="button" value="1" onclick="incrementValue(this)">
+            <input type="button" value="2" onclick="incrementValue(this)">
+            <input type="button" value="3" onclick="incrementValue(this)">
+        </div>
+    <script type="text/javascript">
+        // 버튼 값을 증가시키는 함수
+        function incrementValue(button) {
+            // 현재 버튼의 값을 가져옴
+            var value = parseInt(button.value);
+            // 값을 1 증가시킴
+            value++;
+            // 증가된 값을 버튼에 반영
+            button.value = value;
+        }
+    </script>
+    </body>
+ </html>
