@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1125</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="btn">버튼</button>
+        <p id="event"></p>
+        <script type="text/javascript">
+        const button = document.getElementById('btn');
+        
+        button.addEventListener('mouseover', function() {
+            document.getElementById('event').textContent += '너 올렸구나? \n';
+        });
+
+        button.addEventListener('click', function() {
+            document.getElementById('event').textContent += '너 눌렀구나? \n';
+        });
+
+        button.addEventListener('mouseout', function() {
+            document.getElementById('event').textContent += '너 내렸구나? \n';
+        });
+    </script>
+</body>
+</html>

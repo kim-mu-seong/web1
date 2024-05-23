@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1122</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="btn" onclick="change()">기본 값</button>
+        <script type="text/javascript">
+        function change() {
+            const Input = prompt('문자열 입력');
+
+            if (Input !== null) { 
+                const button = document.getElementById('btn');
+                button.textContent = Input;
+            }
+        }
+        </script>
+    </body>
+</html>

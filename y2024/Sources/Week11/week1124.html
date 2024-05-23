@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1124</title>
+        <meta charset="UTF-8">
+    <style>
+        .slideshow-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .slideshow-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slideshow-container img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img class="slideshow-image" src="토끼 1.jpg" alt="Image 1" class="active">
+        <img class="slideshow-image" src="토끼 2.jpg" alt="Image 2">
+        <img class="slideshow-image" src="토끼 3.jpg" alt="Image 3">
+        <img class="slideshow-image" src="토끼 4.jpg" alt="Image 4">
+        <img class="slideshow-image" src="토끼 5.jpg" alt="Image 5">
+        <img class="slideshow-image" src="토끼 6.jpg" alt="Image 6">
+        <img class="slideshow-image" src="토끼 7.jpg" alt="Image 7">
+        <img class="slideshow-image" src="토끼 8.jpg" alt="Image 8">
+        <img class="slideshow-image" src="토끼 9.jpg" alt="Image 9">
+        <img class="slideshow-image" src="토끼 10.jpg" alt="Image 10">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.slideshow-container img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 4000); 
+    </script>
+</body>
+</html>
+
