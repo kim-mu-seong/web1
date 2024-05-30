@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>week1220</title>
+        <meta charset="UTF-8">
+    </head>
+        <body>
+            <div id="dragsrc" draggable="true">눌러 김무성</div>
+            <div id="dragprocess">드래그 가능</div>
+        
+            <script type="text/javascript">
+                var src = document.getElementById("dragsrc"),
+                    process = document.getElementById("dragprocess"),
+                    srcId, i = 0;
+        
+                    src.ondragstart = function(e) {
+            srcId = e.target.id;
+            i = 0; 
+            process.innerHTML = "드래그시작 [" + i + "]";
+        }
+
+        src.ondrag = function(e) {
+            process.innerHTML = "드래그시작 [" + (i++) + "]";
+        }
+
+        src.ondragend = function(e) {
+            process.innerHTML = "드래그 가능";
+        }
+            </script>
+    </body>
+ </html>
