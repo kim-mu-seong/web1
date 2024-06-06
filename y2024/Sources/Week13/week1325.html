@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>week1325</title>
+</head>
+<body>
+    <video id="video" width="600" controls>
+        <source src="워씽시.mp4" type="video/mp4">
+        브라우저가 비디오 태그를 지원하지 않습니다.
+    </video>
+    <br>
+    <input type="range" id="seekbar" value="0" step="any">
+    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+
+    <script>
+        var video = document.getElementById('video');
+        var seekbar = document.getElementById('seekbar');
+        var currentTimeDisplay = document.getElementById('currentTime');
+        var durationDisplay = document.getElementById('duration');
+
+        // 비디오가 로드되었을 때
+        video.addEventListener('loadedmetadata', () => {
+            seekbar.max = video.duration;
+            durationDisplay.textContent = formatTime(video.duration);
+        });
+
+        // 비디오 재생 시간 업데이트
+        video.addEventListener('timeupdate', () => {
+            seekbar.value = video.currentTime;
+            currentTimeDisplay.textContent = formatTime(video.currentTime);
+        });
+
+        // 슬라이드바로 재생 위치 제어
+        seekbar.addEventListener('input', () => {
+            video.currentTime = seekbar.value;
+        });
+
+        // 시간을 00:00 형식으로 포맷하는 함수
+        function formatTime(time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>

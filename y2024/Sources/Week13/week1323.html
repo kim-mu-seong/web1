@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>week1323</title>
+</head>
+<body onload="initialize();">
+    <div class="container">
+        <h3>웹 사이트 방문 기록 관리</h3>
+        <div class="button-group">
+            <button onclick="startVisit();">방문 시작</button>
+            <button onclick="endVisit();">방문 종료</button>
+            <button onclick="clearVisits();">방문 기록 삭제</button>
+        </div>
+        <div class="visit-list">
+            <h4>방문 기록</h4>
+            <ul id="visitHistory"></ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const visitHistoryKey = 'visitHistory';
+
+        function initialize() {
+            displayVisits();
+        }
+
+        function startVisit() {
+            const startTime = new Date().toLocaleString();
+            const visits = getVisits();
+            visits.push({ start: startTime, end: null });
+            saveVisits(visits);
+            displayVisits();
+        }
+
+        function endVisit() {
+            const visits = getVisits();
+            if (visits.length === 0 || visits[visits.length - 1].end !== null) {
+                alert("먼저 방문을 시작하세요.");
+                return;
+            }
+            visits[visits.length - 1].end = new Date().toLocaleString();
+            saveVisits(visits);
+            displayVisits();
+        }
+
+        function clearVisits() {
+            localStorage.removeItem(visitHistoryKey);
+            displayVisits();
+        }
+
+        function getVisits() {
+            const visitsJson = localStorage.getItem(visitHistoryKey);
+            return visitsJson ? JSON.parse(visitsJson) : [];
+        }
+
+        function saveVisits(visits) {
+            localStorage.setItem(visitHistoryKey, JSON.stringify(visits));
+        }
+
+        function displayVisits() {
+            const visits = getVisits();
+            const visitHistoryElement = document.getElementById('visitHistory');
+            visitHistoryElement.innerHTML = '';
+
+            visits.forEach((visit, index) => {
+                const li = document.createElement('li');
+                li.textContent = `방문 ${index + 1}: 시작 - ${visit.start}, 종료 - ${visit.end || '진행 중'}`;
+                visitHistoryElement.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
+

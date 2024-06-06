@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>드래그 앤 드롭 이미지 텍스트 표시</title>
+    <style>
+        .drop-zone {
+            width: 300px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #999;
+            position: relative;
+        }
+        .drop-zone.dragover {
+            border-color: #000;
+            color: #000;
+        }
+        .drop-zone img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h3>이미지를 드롭하세요</h3>
+    <div id="dropZone" class="drop-zone">여기에 이미지를 드롭하세요</div>
+    <p id="imageText"></p>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const imageText = document.getElementById('imageText');
+
+        const imageDescriptions = {
+            '안경.jpg': '안경',
+            '토끼 1.jpg': '토끼',
+            // 추가 이미지와 설명을 여기에 추가할 수 있습니다.
+        };
+
+        // 프로그램 시작 시 이전 상태 복원
+        window.onload = function() {
+            const lastImage = localStorage.getItem('lastImage');
+            if (lastImage) {
+                const img = document.createElement('img');
+                img.src = lastImage;
+                dropZone.innerHTML = '';
+                dropZone.appendChild(img);
+
+                const lastDescription = localStorage.getItem('lastDescription');
+                if (lastDescription) {
+                    imageText.textContent = lastDescription;
+                }
+            }
+        };
+
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropZone.classList.remove('dragover');
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    dropZone.innerHTML = '';
+                    dropZone.appendChild(img);
+
+                    localStorage.setItem('lastImage', e.target.result);
+
+                    const description = imageDescriptions[file.name];
+                    if (description) {
+                        imageText.textContent = description;
+                        localStorage.setItem('lastDescription', description);
+                    } else {
+                        imageText.textContent = '알 수 없는 이미지';
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
+
